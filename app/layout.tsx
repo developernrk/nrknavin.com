@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     canonical: options.url,
   },
   other: {
-    "google-site-verification": "IzcWMgn5Qjf-LCtA337KTGjivsf9bmod_1pZ-jxYQh8",
+    "google-site-verification": "liHDrCXXJIwMQAMnvIthc0FniieeAz5MOkpnV_51uTI",
   },
 };
 
