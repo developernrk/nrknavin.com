@@ -37,6 +37,7 @@ export default async function Home() {
         </Slide>
       </section>
       {/* <ContributionGraph /> */}
+
       <Job />
     </main>
   );
