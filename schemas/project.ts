@@ -6,7 +6,7 @@ const project:SchemaTypeDefinition = {
   title: "Projects",
   description: "Project Schema",
   type: "document",
-  icon: BiPackage,
+  // icon: BiPackage,
   fields: [
     {
       name: "name",

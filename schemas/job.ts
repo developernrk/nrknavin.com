@@ -5,7 +5,7 @@ const job:SchemaTypeDefinition = {
   name: "job",
   title: "Job",
   type: "document",
-  icon: BiBriefcase,
+  // icon: BiBriefcase,
   fields: [
     {
       name: "name",

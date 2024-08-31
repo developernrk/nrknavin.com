@@ -6,7 +6,7 @@ export const youtube = defineType({
   name: "youtube",
   title: "Youtube",
   type: "object",
-  icon: FiYoutube,
+  // icon: FiYoutube,
   fields: [
     defineField({
       name: "title",
