@@ -181,7 +181,7 @@ export default async function Post({ params }: Props) {
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    {`@${post.author.twitterUrl.split("twitter.com/")[1]}`}
+                    {`@${post.author.twitterUrl.split("x.com/")[1]}`}
                   </a>
                 </div>
               </address>
@@ -219,15 +219,15 @@ export default async function Post({ params }: Props) {
         </Slide>
       </article>
 
-      <section
-        id="comments"
-        className="max-w-3xl mt-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:py-10 pt-0"
-      >
-        <h3 className="lg:text-4xl text-3xl font-semibold tracking-tight mb-8">
-          Comments
-        </h3>
-        <Comments />
-      </section>
+      {/*<section*/}
+      {/*  id="comments"*/}
+      {/*  className="max-w-3xl mt-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:py-10 pt-0"*/}
+      {/*>*/}
+      {/*  <h3 className="lg:text-4xl text-3xl font-semibold tracking-tight mb-8">*/}
+      {/*    Comments*/}
+      {/*  </h3>*/}
+      {/*  <Comments />*/}
+      {/*</section>*/}
 
       <section className="max-w-3xl lg:py-10 pt-0">
         <h3 className="lg:text-4xl text-3xl font-semibold tracking-tight mb-8">
