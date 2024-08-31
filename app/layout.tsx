@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   title: options.title,
   metadataBase: new URL(options.url),
   description: options.description,
+  icons:{
+    icon:""
+  },
   openGraph: {
     title: options.title,
     url: options.url,
