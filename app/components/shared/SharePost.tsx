@@ -28,16 +28,16 @@ export default function SharePost({ title, slug, description }: props) {
       name: "LinkedIn",
       shareUrl: `https://linkedin.com/sharing/share-offsite/?url=${blog}${slug}&title=${title}&summary=${description}`,
     },
-    {
-      icon: BiLogoFacebookSquare,
-      name: "Facebook",
-      shareUrl: `https://www.facebook.com/sharer/sharer.php?u=${blog}${slug}`,
-    },
+    // {
+    //   icon: BiLogoFacebookSquare,
+    //   name: "Facebook",
+    //   shareUrl: `https://www.facebook.com/sharer/sharer.php?u=${blog}${slug}`,
+    // },
     {
       icon: BiLogoWhatsapp,
       name: "WhatsApp",
       shareUrl: `https://api.whatsapp.com/send?text=${encodeURIComponent(
-        "Read this amazing article by Navin Barange"
+        "Read this amazing article by Navin"
       )}.%0A%0A${title}%0A%0A${blog}${slug}`,
     },
   ];

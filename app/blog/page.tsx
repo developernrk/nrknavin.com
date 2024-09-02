@@ -23,7 +23,7 @@ export default async function Blog() {
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <PageHeading
         title="Blogs"
-        description="Welcome to my blog where I share personal stories about things I've learned, I also write for other publications."
+        description="Welcome to my blog, where I share personal stories and lessons I've learned along the way. I also contribute to other publications, bringing you diverse insights and perspectives."
       >
          <Social type="publication" />
       </PageHeading>
