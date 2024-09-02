@@ -32,9 +32,10 @@ export default async function Home() {
               </Slide>
             </div>
           ))}
-        {/*<Slide delay={0.14}>*/}
-        {/*  <HeroSvg />*/}
-        {/*</Slide>*/}
+        <Slide delay={0.14}>
+          {/*<HeroSvg />*/}
+            <></>
+        </Slide>
       </section>
       {/* <ContributionGraph /> */}
 
