@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home Page -->
+    <url>
+        <loc>https://www.nrknavin.com/</loc>
+        <lastmod>2024-09-04</lastmod>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://www.nrknavin.com/about</loc>
+        <lastmod>2024-09-04</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Page -->
+    <url>
+        <loc>https://www.nrknavin.com/blog</loc>
+        <lastmod>2024-09-04</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Project Page -->
+    <url>
+        <loc>https://www.nrknavin.com/project</loc>
+        <lastmod>2024-09-04</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
