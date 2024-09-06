@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-    <!-- Home Page -->
-    <url>
-        <loc>https://www.nrknavin.com/</loc>
-        <lastmod>2024-09-04</lastmod>
-        <priority>1.0</priority>
-    </url>
 
-    <!-- About Page -->
-    <url>
-        <loc>https://www.nrknavin.com/about</loc>
-        <lastmod>2024-09-04</lastmod>
-        <priority>0.8</priority>
-    </url>
+<url>
+  <loc>https://nrknavin.com/</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://nrknavin.com/about</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nrknavin.com/projects</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nrknavin.com/blog</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nrknavin.com/gallery</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nrknavin.com/blog/best-practices-for-coding-with-react-beyond-the-basics</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nrknavin.com/blog/is-java-still-relevant-nowadays-absolutely-and-here-s-why</loc>
+  <lastmod>2024-09-06T05:10:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
-    <!-- Blog Page -->
-    <url>
-        <loc>https://www.nrknavin.com/blog</loc>
-        <lastmod>2024-09-04</lastmod>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Project Page -->
-    <url>
-        <loc>https://www.nrknavin.com/project</loc>
-        <lastmod>2024-09-04</lastmod>
-        <priority>0.8</priority>
-    </url>
 
 </urlset>
