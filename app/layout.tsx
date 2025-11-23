@@ -27,9 +27,7 @@ export const metadata: Metadata = {
   title: options.title,
   metadataBase: new URL(options.url),
   description: options.description,
-  icons:{
-    icon:""
-  },
+
   openGraph: {
     title: options.title,
     url: options.url,
@@ -55,19 +53,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+        className={`${incognito.variable} ${inter.className} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+        suppressHydrationWarning
       >
         <Providers>
           <Navbar />
           {children}
           <Footer />
+          {/* <Script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          /> */}
         </Providers>
       </body>
-      <Script
-        defer
-        src="https://cloud.umami.is/script.js"
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-      />
     </html>
   );
 }

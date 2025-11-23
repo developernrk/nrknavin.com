@@ -49,7 +49,7 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-x-4">
-            <Theme />
+             <Theme />
             <MobileMenu />
           </div>
         </div>
