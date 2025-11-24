@@ -11,6 +11,7 @@ module.exports = {
       },
       { hostname: "icons.duckduckgo.com" },
       { hostname: "www.google.com" },
+      { hostname: "i.ibb.co" },
     ],
   },
 };

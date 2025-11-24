@@ -25,7 +25,7 @@ export const CustomPortableText: PortableTextComponents = {
   },
 
   block: {
-    normal: ({ children }) => <p className="mt-2 mb-6">{children}</p>,
+    normal: ({ children }) => <p className="mt-1.5 xs:mt-2 sm:mt-3 mb-3 xs:mb-4 sm:mb-5 md:mb-6 text-xs xs:text-sm sm:text-base leading-relaxed">{children}</p>,
     h2: ({ children }) => (
       <h2
         id={children // TODO: Export slugify code to reusable function
@@ -34,7 +34,7 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 lg:text-4xl text-3xl text-zinc-700 my-8"
+        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-sm xs:before:text-base sm:before:text-lg md:before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 text-xl xs:text-2xl sm:text-3xl lg:text-4xl text-zinc-700 my-5 xs:my-6 sm:my-7 md:my-8"
       >
         <HashScroll text={children} />
       </h2>
@@ -47,7 +47,7 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative block lg:font-bold font-semibold tracking-tight lg:text-3xl text-2xl dark:text-zinc-100 text-zinc-700 my-6"
+        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-sm xs:before:text-base sm:before:text-lg md:before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative block lg:font-bold font-semibold tracking-tight text-lg xs:text-xl sm:text-2xl lg:text-3xl dark:text-zinc-100 text-zinc-700 my-4 xs:my-5 sm:my-6"
       >
         <HashScroll text={children} />
       </h3>
@@ -60,15 +60,15 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-6 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-xl dark:text-zinc-100 text-zinc-700 mb-2 mt-4"
+        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-6 before:-left-4 lg:before:text-2xl before:text-sm xs:before:text-base sm:before:text-lg md:before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-base xs:text-lg sm:text-xl dark:text-zinc-100 text-zinc-700 mb-2 mt-2 xs:mt-3 sm:mt-4"
       >
         <HashScroll text={children} />
       </h4>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="relative overflow-hidden tracking-tight text-lg my-8 lg:py-6 lg:pl-6 pr-12 p-4 border dark:border-zinc-800 border-zinc-200 rounded-md">
+      <blockquote className="relative overflow-hidden tracking-tight text-xs xs:text-sm sm:text-base md:text-lg my-5 xs:my-6 sm:my-7 md:my-8 lg:my-8 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6 px-2.5 xs:px-3 sm:px-4 lg:pl-6 pr-6 xs:pr-8 sm:pr-10 md:pr-12 border dark:border-zinc-800 border-zinc-200 rounded-md">
         <BiSolidQuoteRight
-          className="text-7xl absolute -top-7 -right-5 -rotate-12 dark:text-zinc-800 text-zinc-200"
+          className="text-5xl sm:text-6xl lg:text-7xl absolute -top-6 sm:-top-7 -right-3 sm:-right-5 -rotate-12 dark:text-zinc-800 text-zinc-200"
           aria-hidden="true"
         />
         {children}

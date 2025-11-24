@@ -29,13 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${project.name} | Project`,
-    metadataBase: new URL(`https://nrknavin.com/projects/${project.slug}`),
+    metadataBase: new URL(`https://nrknavin.in/projects/${project.slug}`),
     description: project.tagline,
     openGraph: {
       images: project.coverImage
         ? urlFor(project.coverImage.image).width(1200).height(630).url()
         : fallbackImage,
-      url: `https://nrknavin.com/projects/${project.slug}`,
+      url: `https://nrknavin.in/projects/${project.slug}`,
       title: project.name,
       description: project.tagline,
     },
@@ -51,48 +51,48 @@ export default async function Project({ params }: Props) {
   });
 
   return (
-    <main className="max-w-6xl mx-auto lg:px-16 px-8">
+    <main className="container-safe section-padding">
       <Slide>
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-start justify-between flex-wrap mb-4">
-            <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-4 max-w-md">
+        <div className="container-narrow">
+          <div className="flex items-start justify-between flex-wrap gap-3 xs:gap-4 mb-6 xs:mb-8 sm:mb-10">
+            <h1 className="font-incognito font-black tracking-tight text-2xl xs:text-3xl sm:text-4xl lg:text-5xl flex-grow">
               {project.name}
             </h1>
 
-            <div className="flex items-center gap-x-2">
+            <div className="flex items-center gap-1.5 xs:gap-2 flex-wrap">
               <a
                 href={project.projectUrl}
                 rel="noreferrer noopener"
                 target="_blank"
-                className={`flex items-center gap-x-2 dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-4 py-2 duration-200 ${
+                className={`btn-primary inline-flex items-center gap-x-1.5 xs:gap-x-2 text-xs transition-all duration-300 ${
                   !project.projectUrl
-                    ? "cursor-not-allowed opacity-80"
-                    : "cursor-pointer hover:dark:border-zinc-700 hover:border-zinc-200"
+                    ? "cursor-not-allowed opacity-60"
+                    : "hover:shadow-lg"
                 }`}
               >
                 <BiLinkExternal aria-hidden="true" />
-                {project.projectUrl ? "Live URL" : "Coming Soon"}
+                <span>{project.projectUrl ? "Live URL" : "Coming Soon"}</span>
               </a>
 
               <a
                 href={project.repository}
                 rel="noreferrer noopener"
                 target="_blank"
-                className={`flex items-center gap-x-2 dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-4 py-2 duration-200 ${
+                className={`btn-secondary inline-flex items-center gap-x-1.5 xs:gap-x-2 text-xs transition-all duration-300 ${
                   !project.repository
-                    ? "cursor-not-allowed opacity-80"
-                    : "cursor-pointer hover:dark:border-zinc-700 hover:border-zinc-200"
+                    ? "cursor-not-allowed opacity-60"
+                    : "hover:shadow-lg"
                 }`}
               >
                 <BiLogoGithub aria-hidden="true" />
-                {project.repository ? "GitHub" : "No Repo"}
+                <span>{project.repository ? "GitHub" : "No Repo"}</span>
               </a>
             </div>
           </div>
 
-          <div className="relative w-full h-40 pt-[52.5%]">
+          <div className="relative w-full h-auto pt-[52.5%] rounded-lg sm:rounded-xl overflow-hidden my-6 xs:my-8 sm:my-10 border dark:border-zinc-800 border-zinc-100">
             <Image
-              className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
+              className="object-cover"
               fill
               src={project.coverImage?.image ?? fallbackImage}
               alt={project.coverImage?.alt ?? project.name}
@@ -102,7 +102,7 @@ export default async function Project({ params }: Props) {
             />
           </div>
 
-          <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed">
+          <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed space-y-3 xs:space-y-4 text-sm xs:text-base sm:text-lg">
             <PortableText
               value={project.description}
               components={CustomPortableText}

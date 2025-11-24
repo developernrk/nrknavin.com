@@ -20,11 +20,11 @@ const images = [
 
 export const metadata: Metadata = {
   title: "Photos | NRk Navin",
-  metadataBase: new URL("https://nrknavin.com/photos"),
+  metadataBase: new URL("https://nrknavin.in/gallery"),
   description: "Explore photos taken by Navin Barange",
   openGraph: {
     title: "Photos | NRk Navin",
-    url: "https://nrknavin.com/photos",
+    url: "https://nrknavin.in/gallery",
     description: "Explore photos taken by Navin Barange",
     images:
       "",
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
 
 export default function Photos() {
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20">
+    <main className="container-safe section-padding">
       <PageHeading
         title="Gallery"
-        description="This page is still under construction..."
+        description="Coming Soon™ (patience is a virtue I'm still developing 🎨 ... much like my photography skills 📸)"
       />
       {/* <figure className="my-6">
         <Slide delay={0.12} className="flex flex-wrap gap-2">

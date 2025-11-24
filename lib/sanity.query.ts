@@ -31,7 +31,21 @@ export const profileQuery = groq`*[_type == "profile"]{
   email,
   "resumeURL": resumeURL.asset->url,
   socialLinks,
-  usage
+  usage,
+  "skills": skills[] -> {
+    _id,
+    name,
+    category,
+    proficiency,
+    iconName,
+    icon {
+      "image": asset->url,
+      alt,
+    },
+    yearsOfExperience,
+    description,
+    order,
+  }
 }`;
 
 export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
@@ -99,4 +113,17 @@ export const singlePostQuery = groq`*[_type == "Post" && slug.current == $slug][
   body,
 }`;
 
-export const heroesQuery = groq`*[_type == "heroe"] | order(_createdAt asc) { _id, _createdAt, name, url, met }`;
+export const skillsQuery = groq`*[_type == "skill"] | order(category, order) {
+  _id,
+  name,
+  category,
+  proficiency,
+  iconName,
+  icon {
+    "image": asset->url,
+    alt,
+  },
+  yearsOfExperience,
+  description,
+  order,
+}`;

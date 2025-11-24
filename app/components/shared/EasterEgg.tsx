@@ -21,22 +21,26 @@ export default function EasterEgg({ isMet }: { isMet: boolean }) {
 
   return (
     <>
-      <button onClick={toggleImage}>
+      <button 
+        onClick={toggleImage}
+        className="p-1 hover:opacity-70 transition-opacity duration-300"
+        aria-label="Toggle easter egg"
+      >
         {isMet !== true ? (
           <BiCheckbox
-            className="text-3xl dark:text-zinc-300 text-zinc-600"
+            className="text-xl xs:text-2xl sm:text-3xl dark:text-zinc-300 text-zinc-600"
             aria-hidden="true"
           />
         ) : (
           <BiSolidCheckboxChecked
-            className="text-3xl dark:text-primary-color text-secondary-color"
+            className="text-xl xs:text-2xl sm:text-3xl dark:text-primary-color text-secondary-color"
             aria-hidden="true"
           />
         )}
       </button>
 
       <Image
-        className={`fixed z-30 bottom-1/2 duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`fixed z-30 bottom-1/2 w-24 xs:w-32 sm:w-40 md:w-48 lg:w-64 h-auto duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           image ? "left-0" : "-left-80"
         }`}
         src={funImage}

@@ -16,8 +16,8 @@ export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
   const data = [
     {
-      title: "About",
-      href: "/about",
+      title: "Skills",
+      href: "/skills",
       icon: HiUser,
     },
     {

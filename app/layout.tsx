@@ -18,7 +18,7 @@ const options = {
   title: "Navin | Software Developer",
   description:
     "Navin Barange is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
-  url: "https://nrknavin.com",
+  url: "https://nrknavin.in",
   ogImage:
     "https://i.ibb.co/BBPbZb7/1705208737383.jpg",
 };
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "nrknavin.com",
+    siteName: "nrknavin.in",
     locale: "en-US",
     type: "website",
     description: options.description,
@@ -53,12 +53,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${incognito.variable} ${inter.className} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+        className={`${incognito.variable} ${inter.className} dark:bg-zinc-950 bg-white dark:text-white text-zinc-900 font-medium antialiased`}
         suppressHydrationWarning
       >
         <Providers>
           <Navbar />
-          {children}
+          <div className="min-h-screen flex flex-col">
+            {children}
+          </div>
           <Footer />
           {/* <Script
             defer

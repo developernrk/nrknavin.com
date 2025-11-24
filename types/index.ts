@@ -33,6 +33,7 @@ export type ProfileType = {
   resumeURL: string;
   og: string;
   usage: PortableTextBlock[];
+  skills?: SkillType[];
 };
 
 export type JobType = {
@@ -89,11 +90,17 @@ export type PostType = {
   featured: boolean;
   isPublished: boolean;
 };
-
-export type HeroeType = {
+export type SkillType = {
   _id: string;
-  _createdAt: string;
   name: string;
-  url: string;
-  met: boolean;
+  category: "frontend" | "backend" | "mobile" | "ai" | "architecture" | "tools" | "databases" | "devops" | "other";
+  proficiency: "beginner" | "intermediate" | "advanced" | "expert";
+  icon?: {
+    image: string;
+    alt: string;
+  };
+  iconName?: string; // react-icons icon name (e.g., 'FaReact', 'SiTypescript')
+  yearsOfExperience?: number;
+  description?: string;
+  order?: number;
 };

@@ -14,7 +14,7 @@ type props = {
 };
 
 export default function SharePost({ title, slug, description }: props) {
-  const blog = encodeURIComponent("https://nrknavin.com/blog/");
+  const blog = encodeURIComponent("https://nrknavin.in/blog/");
   const options = [
     {
       icon: BiLogoTwitter,
@@ -51,17 +51,17 @@ export default function SharePost({ title, slug, description }: props) {
   };
 
   return (
-    <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
-      <h3 className="text-xl font-semibold tracking-tight mb-4">Share Post</h3>
+    <section className="border-b dark:border-zinc-800 border-zinc-200 pb-4 xs:pb-6 sm:pb-8">
+      <h3 className="text-xs font-semibold tracking-tight mb-3 xs:mb-4 uppercase">Share Post</h3>
 
-      <div className="flex flex-wrap items-center gap-2 tracking-tight">
+      <div className="flex flex-wrap items-center gap-2 xs:gap-2.5 sm:gap-3 tracking-tight">
         {options.map((data, id) => (
           <button
             key={id}
             onClick={() => openPopup(data.shareUrl)}
             title={`Share to ${data.name}`}
             aria-label={`Share to ${data.name}`}
-            className="w-12 h-12 p-2 grid place-content-center text-2xl dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-md"
+            className="w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 p-1.5 xs:p-2 grid place-content-center text-lg xs:text-xl sm:text-2xl dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-lg hover:shadow-md dark:hover:bg-zinc-800 hover:bg-zinc-200 transition-all duration-300"
           >
             <data.icon aria-hidden="true" />
           </button>

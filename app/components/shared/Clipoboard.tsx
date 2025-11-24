@@ -17,11 +17,15 @@ export default function Clipoboard({ content }: { content: string }) {
   }
 
   return (
-    <button onClick={handleClipboard}>
+    <button 
+      onClick={handleClipboard}
+      className="p-1 xs:p-1.5 sm:p-2 rounded-md dark:hover:bg-zinc-700/50 hover:bg-zinc-200/50 transition-colors duration-200"
+      title="Copy to clipboard"
+    >
       {!status ? (
-        <BiCopy />
+        <BiCopy className="text-sm xs:text-base sm:text-lg" />
       ) : (
-        <RiCheckboxCircleFill className="text-secondary-color transition" />
+        <RiCheckboxCircleFill className="text-sm xs:text-base sm:text-lg text-secondary-color transition" />
       )}
     </button>
   );
