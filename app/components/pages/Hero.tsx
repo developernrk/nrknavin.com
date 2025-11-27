@@ -50,7 +50,7 @@ export default async function Hero() {
 
               {/* Headline */}
               <h1 className="text-hero sm:text-start leading-tight sm:leading-snug md:leading-normal">
-                Building Tomorrow's Tech Today
+                Building Tomorrow&#39;s Tech Today
               </h1>
             </div>
           </Slide>
