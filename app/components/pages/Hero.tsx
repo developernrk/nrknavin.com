@@ -6,6 +6,7 @@ import { Slide } from "../../animation/Slide";
 import Social from "../shared/Social";
 import HeroSvg from "../../assets/icons/HeroSvg";
 import SkillsByCategory from "./SkillsByCategory";
+import {PortableText} from "@portabletext/react";
 
 export default async function Hero() {
   const [profileData] = (await sanityFetch({
@@ -50,7 +51,7 @@ export default async function Hero() {
 
               {/* Headline */}
               <h1 className="text-hero leading-tight sm:leading-snug md:leading-normal">
-                {profileData.headline}
+                <PortableText value={profileData.fullBio}/>
               </h1>
             </div>
           </Slide>
