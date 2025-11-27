@@ -8,6 +8,7 @@ import { Slide } from "../../animation/Slide";
 import { urlFor } from "@/lib/sanity.image";
 import { sanityFetch } from "@/lib/sanity.client";
 import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
+import StructuredData from "@/app/components/seo/StructuredData";
 
 type Props = {
   params: {
@@ -28,16 +29,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   return {
-    title: `${project.name} | Project`,
-    metadataBase: new URL(`https://nrknavin.in/projects/${project.slug}`),
-    description: project.tagline,
+    title: `${project.name} - Software Development Project`,
+    description: `${project.tagline} - A software development project by Navin Barange showcasing full-stack development, modern technologies, and best practices.`,
+    keywords: `${project.name}, Software project, Full stack development, ${project.tagline}, Navin Barange project, Web development, Programming project`,
     openGraph: {
-      images: project.coverImage
-        ? urlFor(project.coverImage.image).width(1200).height(630).url()
-        : fallbackImage,
+      type: "website",
       url: `https://nrknavin.in/projects/${project.slug}`,
-      title: project.name,
-      description: project.tagline,
+      title: `${project.name} - Software Development Project`,
+      description: `${project.tagline} - A software development project by Navin Barange.`,
+      images: [
+        {
+          url: project.coverImage
+            ? urlFor(project.coverImage.image).width(1200).height(630).url()
+            : fallbackImage,
+          width: 1200,
+          height: 630,
+          alt: `${project.name} - Software Development Project`,
+        },
+      ],
+      siteName: "Navin Barange Portfolio",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} - Software Development Project`,
+      description: `${project.tagline} - A software development project by Navin Barange.`,
+      images: [
+        project.coverImage
+          ? urlFor(project.coverImage.image).width(1200).height(630).url()
+          : fallbackImage,
+      ],
+    },
+    alternates: {
+      canonical: `https://nrknavin.in/projects/${project.slug}`,
     },
   };
 }
@@ -52,6 +75,7 @@ export default async function Project({ params }: Props) {
 
   return (
     <main className="container-safe section-padding">
+      <StructuredData type="project" data={project} />
       <Slide>
         <div className="container-narrow">
           <div className="flex items-start justify-between flex-wrap gap-3 xs:gap-4 mb-6 xs:mb-8 sm:mb-10">

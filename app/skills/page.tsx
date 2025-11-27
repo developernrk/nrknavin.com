@@ -8,14 +8,26 @@ import { Slide } from "../animation/Slide";
 import EmptyState from "../components/shared/EmptyState";
 
 export const metadata: Metadata = {
-  title: "Skills | Nrk Navin",
-  metadataBase: new URL("https://nrknavin.in/skills"),
-  description: "Explore the tech stack and skills that power my development work",
+  title: "Technical Skills & Expertise",
+  description: "Comprehensive overview of my technical skills including Java, React, Python, Spring Boot, AI/ML, cloud architecture, and full-stack development expertise with years of experience.",
+  keywords: "Java skills, React expertise, Python development, Spring Boot, Microservices, Cloud Architecture, AI ML skills, Full Stack Developer skills, Technical expertise, Software engineering skills",
   openGraph: {
-    title: "Skills | Nrk Navin",
+    title: "Technical Skills & Expertise | Navin Barange",
     url: "https://nrknavin.in/skills",
-    description: "Explore the tech stack and skills that power my development work",
-    images: "https://nrknavin.in/project.png",
+    description: "Comprehensive overview of my technical skills including Java, React, Python, Spring Boot, AI/ML, cloud architecture, and full-stack development expertise.",
+    images: [
+      {
+        url: "https://nrknavin.in/project.png",
+        width: 1200,
+        height: 630,
+        alt: "Navin Barange Technical Skills and Expertise",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technical Skills & Expertise | Navin Barange",
+    description: "Comprehensive overview of my technical skills including Java, React, Python, Spring Boot, AI/ML, and cloud architecture.",
   },
 };
 

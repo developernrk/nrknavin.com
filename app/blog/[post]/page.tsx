@@ -18,6 +18,7 @@ import { HiCalendar, HiChat } from "react-icons/hi";
 import { sanityFetch } from "@/lib/sanity.client";
 import { readTime } from "@/app/utils/readTime";
 import PageHeading from "@/app/components/shared/PageHeading";
+import StructuredData from "@/app/components/seo/StructuredData";
 
 type Props = {
   params: {
@@ -94,6 +95,7 @@ export default async function Post({ params }: Props) {
 
   return (
     <main className="container-safe mx-auto min-h-screen py-6 xs:py-8 sm:py-10">
+      <StructuredData type="article" data={post} />
       <header>
         <Slide className="relative flex items-center gap-x-2 border-b dark:border-zinc-800 border-zinc-200 pb-6 xs:pb-8">
           <Link

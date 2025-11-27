@@ -19,15 +19,26 @@ const images = [
 ];
 
 export const metadata: Metadata = {
-  title: "Photos | NRk Navin",
-  metadataBase: new URL("https://nrknavin.in/gallery"),
-  description: "Explore photos taken by Navin Barange",
+  title: "Photo Gallery & Visual Portfolio",
+  description: "Explore the visual side of Navin Barange - a collection of photography, design work, and creative projects showcasing artistic perspective alongside technical expertise.",
+  keywords: "Photo gallery, Photography, Visual portfolio, Creative work, Design portfolio, Navin Barange photography, Visual arts, Creative projects",
   openGraph: {
-    title: "Photos | NRk Navin",
+    title: "Photo Gallery & Visual Portfolio | Navin Barange",
     url: "https://nrknavin.in/gallery",
-    description: "Explore photos taken by Navin Barange",
-    images:
-      "",
+    description: "Explore the visual side of Navin Barange - photography, design work, and creative projects.",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1585618256754-241cfe4e8113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80",
+        width: 1200,
+        height: 630,
+        alt: "Navin Barange Photo Gallery and Visual Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photo Gallery & Visual Portfolio | Navin Barange",
+    description: "Explore the visual side of Navin Barange - photography, design work, and creative projects.",
   },
 };
 

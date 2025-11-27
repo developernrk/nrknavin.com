@@ -6,15 +6,26 @@ import { Slide } from "../animation/Slide";
 import PageHeading from "@/app/components/shared/PageHeading";
 
 export const metadata: Metadata = {
-  title: "Blog | Nrk Navin",
-  metadataBase: new URL("https://nrknavin.in/blog"),
-  description: "Read latest stories from Navin Barange's Blog",
+  title: "Technical Blog & Programming Insights",
+  description: "Read in-depth articles about full-stack development, Java programming, React best practices, AI/ML implementation, cloud architecture, and software engineering insights from Navin Barange.",
+  keywords: "Programming blog, Java tutorials, React development, Full stack articles, AI ML blog, Software engineering, Technical writing, Development insights, Coding best practices, Technology blog",
   openGraph: {
-    title: "Blog | NRK Navin",
+    title: "Technical Blog & Programming Insights | Navin Barange",
     url: "https://nrknavin.in/blog",
-    description: "Read latest stories from Navin Barange's Blog",
-    images:
-      "https://pbwebdev.co.uk/wp-content/uploads/2018/12/blogs.jpg",
+    description: "Read in-depth articles about full-stack development, Java programming, React best practices, AI/ML implementation, and software engineering insights.",
+    images: [
+      {
+        url: "https://pbwebdev.co.uk/wp-content/uploads/2018/12/blogs.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Navin Barange Technical Blog and Programming Articles",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technical Blog & Programming Insights | Navin Barange",
+    description: "In-depth articles about full-stack development, Java, React, AI/ML, and software engineering insights.",
   },
 };
 

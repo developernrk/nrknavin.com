@@ -9,15 +9,26 @@ import { sanityFetch } from "@/lib/sanity.client";
 import PageHeading from "../components/shared/PageHeading";
 
 export const metadata: Metadata = {
-  title: "Project | Nrk Navin",
-  metadataBase: new URL("https://nrknavin.in/projects"),
-  description: "Explore projects built by Navin Barange",
+  title: "Software Development Projects & Portfolio",
+  description: "Explore my full-stack development projects featuring Java, React, Python, AI/ML applications, microservices, and cloud-based solutions. Real-world applications showcasing modern software engineering practices.",
+  keywords: "Software projects, Full stack projects, Java applications, React projects, Python development, AI ML projects, Microservices architecture, Cloud applications, Open source projects, Portfolio projects",
   openGraph: {
-    title: "Projects | Nrk Navin",
+    title: "Software Development Projects & Portfolio | Navin Barange",
     url: "https://nrknavin.in/projects",
-    description: "Explore projects built by Navin",
-    images:
-      "https://www.officetimer.com/wp-content/uploads/2017/06/project.jpg",
+    description: "Explore my full-stack development projects featuring Java, React, Python, AI/ML applications, microservices, and cloud-based solutions.",
+    images: [
+      {
+        url: "https://www.officetimer.com/wp-content/uploads/2017/06/project.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Navin Barange Software Development Projects Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Development Projects & Portfolio | Navin Barange",
+    description: "Explore my full-stack development projects featuring Java, React, Python, AI/ML applications, and cloud solutions.",
   },
 };
 

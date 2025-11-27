@@ -1,7 +1,22 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
-Disallow: /checkout/
 Allow: /
 
+# Block admin and development areas
+Disallow: /admin/
+Disallow: /studio/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /login/
+Disallow: /checkout/
+
+# Allow important pages
+Allow: /skills
+Allow: /projects
+Allow: /blog
+Allow: /gallery
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://nrknavin.in/sitemap.xml

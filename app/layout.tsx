@@ -6,6 +6,7 @@ import { incognito } from "./assets/font/font";
 import { gitlabmono } from "./assets/font/font";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
+import StructuredData from "./components/seo/StructuredData";
 import { Providers } from "./providers";
 
 const inter = Inter({
@@ -15,34 +16,67 @@ const inter = Inter({
 });
 
 const options = {
-  title: "Navin | Software Developer",
+  title: "Navin Barange | Full Stack Developer & AI Engineer",
   description:
-    "Navin Barange is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
+    "Full Stack Developer & AI Engineer specializing in Java, React, Python, and cloud architecture. Building scalable solutions from frontend to AI integration. Expert in Spring Boot, microservices, and modern web technologies.",
   url: "https://nrknavin.in",
   ogImage:
     "https://i.ibb.co/BBPbZb7/1705208737383.jpg",
+  keywords: "Full Stack Developer, AI Engineer, Java Developer, React Developer, Python, Spring Boot, Cloud Architecture, Microservices, Software Engineer, Web Development, Machine Learning, Navin Barange",
 };
 
 export const metadata: Metadata = {
-  title: options.title,
+  title: {
+    default: options.title,
+    template: "%s | Navin Barange - Full Stack Developer & AI Engineer",
+  },
   metadataBase: new URL(options.url),
   description: options.description,
-
+  keywords: options.keywords,
+  authors: [{ name: "Navin Barange", url: "https://nrknavin.in" }],
+  creator: "Navin Barange",
+  publisher: "Navin Barange",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: options.title,
-    url: options.url,
-    siteName: "nrknavin.in",
-    locale: "en-US",
     type: "website",
+    locale: "en-US",
+    url: options.url,
+    title: options.title,
     description: options.description,
-    images: options.ogImage,
+    siteName: "Navin Barange Portfolio",
+    images: [
+      {
+        url: options.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Navin Barange - Full Stack Developer & AI Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: options.title,
+    description: options.description,
+    images: [options.ogImage],
+    creator: "@nrk_navin",
   },
   alternates: {
     canonical: options.url,
   },
-  other: {
-    "google-site-verification": "liHDrCXXJIwMQAMnvIthc0FniieeAz5MOkpnV_51uTI",
+  verification: {
+    google: "liHDrCXXJIwMQAMnvIthc0FniieeAz5MOkpnV_51uTI",
   },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -57,6 +91,8 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Providers>
+          <StructuredData type="person" />
+          <StructuredData type="website" />
           <Navbar />
           <div className="min-h-screen flex flex-col">
             {children}
