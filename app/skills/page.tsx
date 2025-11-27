@@ -37,7 +37,7 @@ export default async function SkillsPage() {
           {skills.length > 0 ? (
             <div className="space-y-12">
               <div className="flex flex-col gap-y-3">
-                <h2 className="text-heading-md">My Digital Toolkit 🛠️</h2>
+                <h2 className="text-heading-md">My Digital Toolkit</h2>
                 <p className="text-base dark:text-zinc-400 text-zinc-600">
                   Organized by category with proficiency levels, years of experience, and real-world insights.
                 </p>

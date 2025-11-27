@@ -10,7 +10,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = [
-    { title: "About", href: "/about" },
+    { title: "Skills", href: "/skills" },
     { title: "Projects", href: "/projects" },
     { title: "Blog", href: "/blog" },
     { title: "Gallery", href: "/gallery" },
@@ -39,7 +39,7 @@ export default function Footer() {
                       width={32}
                       height={32}
                       alt="Navin's logo"
-                      className="w-8 h-8 rounded-md"
+                      className="w-16 h-8 rounded-md"
                   />
               </div>
                 <span className="font-incognito font-bold dark:text-white text-zinc-900 text-base">Navin Barange | NRk</span>
