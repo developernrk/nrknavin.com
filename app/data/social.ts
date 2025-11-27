@@ -34,12 +34,5 @@ export const socialLinks = [
     url: "https://instagram.com/nrk_navin",
     icon: BiLogoInstagram,
     status: "social",
-  },
-  {
-    id: 13,
-    name: "Daily.dev",
-    url: "https://dly.to/TpWwKKgSdj0",
-    icon: BiLinkExternal,
-    status: "social",
   }
 ];

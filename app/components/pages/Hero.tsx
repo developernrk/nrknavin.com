@@ -6,7 +6,6 @@ import { Slide } from "../../animation/Slide";
 import Social from "../shared/Social";
 import HeroSvg from "../../assets/icons/HeroSvg";
 import SkillsByCategory from "./SkillsByCategory";
-import {PortableText} from "@portabletext/react";
 
 export default async function Hero() {
   const [profileData] = (await sanityFetch({
@@ -45,13 +44,13 @@ export default async function Hero() {
               {/* Tagline Badge */}
               <div className="inline-block px-3 sm:px-4 py-1.5 rounded-full dark:bg-zinc-800/60 bg-zinc-100/60 border dark:border-zinc-700 border-zinc-300 w-fit">
                 <p className="text-xs sm:text-sm font-semibold dark:text-primary-color text-secondary-color">
-                  {profileData.fullName}
+                  Full Stack Developer & AI Engineer
                 </p>
               </div>
 
               {/* Headline */}
-              <h1 className="text-hero leading-tight sm:leading-snug md:leading-normal">
-                <PortableText value={profileData.fullBio}/>
+              <h1 className="text-hero sm:text-start leading-tight sm:leading-snug md:leading-normal">
+                Building Tomorrow's Tech Today
               </h1>
             </div>
           </Slide>
@@ -59,7 +58,7 @@ export default async function Hero() {
           {/* Short Bio */}
           <Slide delay={0.1}>
             <p className="text-base sm:text-lg dark:text-zinc-400 text-zinc-600 leading-relaxed max-w-xl">
-              {profileData.shortBio}
+                Crafting scalable solutions from React frontends to Java backends, with AI integration and cloud architecture. I transform complex challenges into elegant, production-ready applications.
             </p>
           </Slide>
 
