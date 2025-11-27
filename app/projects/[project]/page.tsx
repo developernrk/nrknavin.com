@@ -127,10 +127,12 @@ export default async function Project({ params }: Props) {
           </div>
 
           <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed space-y-3 xs:space-y-4 text-sm xs:text-base sm:text-lg">
-            <PortableText
-              value={project.description}
-              components={CustomPortableText}
-            />
+            {project.description && (
+              <PortableText
+                value={project.description}
+                components={CustomPortableText}
+              />
+            )}
           </div>
         </div>
       </Slide>

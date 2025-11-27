@@ -60,7 +60,8 @@ export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
 }`;
 
 export const projectsQuery = groq`*[_type == "project"] | order(_createdAt desc){
-  _id, 
+  _id,
+  _createdAt,
   name,
   "slug": slug.current,
   tagline,

@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
-import { client } from '@/lib/sanity.client'
+import { sanityFetch } from '@/lib/sanity.client'
 import { postsQuery, projectsQuery } from '@/lib/sanity.query'
+import type { PostType, ProjectType } from '@/types'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://nrknavin.in'
@@ -41,10 +42,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     // Fetch blog posts
-    const posts = await client.fetch(postsQuery)
+    const posts = await sanityFetch<PostType[]>({
+      query: postsQuery,
+      tags: ['post']
+    })
     const blogRoutes: MetadataRoute.Sitemap = posts
-      .filter((post: any) => post.isPublished)
-      .map((post: any) => ({
+      .filter((post) => post.isPublished)
+      .map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post._createdAt),
         changeFrequency: 'yearly' as const,
@@ -52,8 +56,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }))
 
     // Fetch projects
-    const projects = await client.fetch(projectsQuery)
-    const projectRoutes: MetadataRoute.Sitemap = projects.map((project: any) => ({
+    const projects = await sanityFetch<ProjectType[]>({
+      query: projectsQuery,
+      tags: ['project']
+    })
+    const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
       url: `${baseUrl}/projects/${project.slug}`,
       lastModified: new Date(project._createdAt || new Date()),
       changeFrequency: 'monthly' as const,

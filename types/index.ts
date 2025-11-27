@@ -49,18 +49,19 @@ export type JobType = {
 
 export type ProjectType = {
   _id: string;
+  _createdAt?: string;
   name: string;
   slug: string;
   tagline: string;
-  projectUrl: string;
-  repository: string;
-  logo: string;
-  coverImage: {
+  projectUrl?: string;
+  repository?: string;
+  logo?: string;
+  coverImage?: {
     image: string;
     alt: string | null;
     lqip: string;
   };
-  description: PortableTextBlock[];
+  description?: PortableTextBlock[];
 };
 
 export type PostType = {
