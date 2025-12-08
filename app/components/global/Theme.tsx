@@ -7,29 +7,24 @@ import { MdOutlineDarkMode } from "react-icons/md";
 import { LuSun } from "react-icons/lu";
 
 export default function Theme() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [hasMounted, setHasMounted] = useState(false);
-  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  function toggleTheme() {
-    return currentTheme === "light" ? setTheme("dark") : setTheme("light");
-  }
   useEffect(() => setHasMounted(true), []);
 
   if (!hasMounted)
     return (
-      <span className="animate-pulse min-w-[28px] min-h-[28px] p-2 rounded-full dark:bg-zinc-800 bg-zinc-200 border dark:border-zinc-700 border-zinc-300"></span>
+      <span className="animate-pulse min-w-[32px] min-h-[32px] p-2 rounded-full dark:bg-zinc-800/50 bg-zinc-200/50 border dark:border-zinc-700/50 border-zinc-300/50"></span>
     );
 
   return (
     <button
-      onClick={toggleTheme}
-      className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-300 transition-all ${
-        currentTheme === "light" ? "-rotate-180" : "rotate-0"
-      }`}
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+      className={`relative dark:bg-zinc-800/80 bg-zinc-100/80 backdrop-blur-sm dark:text-primary-color text-zinc-700 hover:text-primary-color border dark:border-zinc-700/50 border-zinc-300/50 rounded-full p-2 duration-300 transition-all hover:scale-110 ${resolvedTheme === "light" ? "-rotate-180" : "rotate-0"
+        }`}
       aria-label="Toggle Theme"
     >
-      {currentTheme === "light" ? <LuSun /> : <MdOutlineDarkMode />}
+      {resolvedTheme === "light" ? <LuSun className="w-5 h-5" /> : <MdOutlineDarkMode className="w-5 h-5" />}
     </button>
   );
 }

@@ -4,11 +4,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { incognito } from "./assets/font/font";
 import { gitlabmono } from "./assets/font/font";
-import Navbar from "./components/global/Navbar";
+import { FloatingNav } from "./components/global/floating-navbar";
 import Footer from "./components/global/Footer";
 import StructuredData from "./components/seo/StructuredData";
 import WebsiteLoader from "./components/global/WebsiteLoader";
 import { Providers } from "./providers";
+import Theme from "./components/global/Theme";
+import MobileMenu from "./components/global/MobileMenu";
+import Navbar from "./components/global/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -125,6 +128,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const navItems = [
+    { title: "About", href: "/about" },
+    { title: "Skills", href: "/skills" },
+    { title: "Projects", href: "/projects" },
+    { title: "Blog", href: "/blog" },
+    { title: "Resume", href: "/resume" },
+    { title: "Contact", href: "/contact" },
+  ];
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -135,6 +147,10 @@ export default function RootLayout({
         <Providers>
           <StructuredData type="person" />
           <StructuredData type="website" />
+          {/* <FloatingNav navItems={navItems}>
+            <Theme />
+            <MobileMenu />
+          </FloatingNav> */}
           <Navbar />
           <div className="min-h-screen flex flex-col">
             {children}

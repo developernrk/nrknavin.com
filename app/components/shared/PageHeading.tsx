@@ -12,7 +12,7 @@ export default function PageHeading({
   children,
 }: HeadingType) {
   return (
-    <header className="w-full min-h-[20vh] md:min-h-[40vh] flex items-center justify-center border-b dark:border-zinc-800 border-zinc-200 bg-gradient-to-b dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 from-white via-zinc-50 to-white">
+    <header className="w-full min-h-[20vh] md:min-h-[40vh] mt-5 flex items-center justify-center border-b dark:border-zinc-800 border-zinc-200 bg-gradient-to-b dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 from-white via-zinc-50 to-white">
       <Slide>
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-20">
           <div className="space-y-4 md:space-y-6 text-center">

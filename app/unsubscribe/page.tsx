@@ -60,7 +60,7 @@ export default function UnsubscribePage() {
                         Breaking Up? 💔
                     </h1>
                     <p className="text-sm dark:text-zinc-400 text-zinc-600 mb-6">
-                        It's not you, it's... wait, it IS you! 😅 But seriously, we get it. Enter your email to unsubscribe.
+                        It&apos;s not you, it&apos;s... wait, it IS you! 😅 But seriously, we get it. Enter your email to unsubscribe.
                     </p>
 
                     {status === 'success' ? (
@@ -115,12 +115,12 @@ export default function UnsubscribePage() {
                             </button>
 
                             <p className="text-xs dark:text-zinc-500 text-zinc-500 text-center">
-                                Changed your mind? We're cool like that 😎{' '}
+                                Changed your mind? We&apos;re cool like that 😎{' '}
                                 <Link
                                     href="/"
                                     className="text-primary-color hover:underline"
                                 >
-                                    Let's stay friends
+                                    Let&apos;s stay friends
                                 </Link>
                             </p>
                         </form>
@@ -129,7 +129,7 @@ export default function UnsubscribePage() {
 
                 {/* Footer Note */}
                 <p className="text-xs dark:text-zinc-600 text-zinc-400 text-center mt-6">
-                    You can always come back. We don't do grudges here! ✌️
+                    You can always come back. We don&apos;t do grudges here! ✌️
                 </p>
             </div>
         </div>
