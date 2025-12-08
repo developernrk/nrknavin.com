@@ -27,7 +27,7 @@ export default async function Hero() {
               {/* Profile Image - Mobile Only */}
               {profileData.profileImage && (
                 <div className="lg:hidden mb-6 flex justify-center">
-                  <div className="relative w-40 h-40 sm:w-48 sm:h-48">
+                  <div className="relative w-40 h-40 sm:w-48 sm:h-48 group">
                     <Image
                       src={profileData.profileImage.image}
                       alt={profileData.profileImage.alt || profileData.fullName}
@@ -35,8 +35,13 @@ export default async function Hero() {
                       height={200}
                       placeholder="blur"
                       blurDataURL={profileData.profileImage.lqip}
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
                     />
+                    {/* Tooltip */}
+                    <div className="absolute -top-16 left-1/2 -translate-x-1/2 px-4 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-medium rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-50">
+                      Turning coffee into code since 2021 ☕→💻
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-900 dark:bg-zinc-100 rotate-45" />
+                    </div>
                   </div>
                 </div>
               )}
@@ -73,18 +78,26 @@ export default async function Hero() {
           <div className="hidden lg:flex items-center justify-center">
             <div className="relative w-full max-w-sm aspect-square">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-color/20 to-secondary-color/20 rounded-3xl blur-3xl" />
-              <div className="relative flex items-center justify-center w-full h-full">
+              <div className="relative flex items-center justify-center w-full h-full group">
                 {profileData.profileImage ? (
-                  <div className="relative w-full h-full overflow-hidden rounded-3xl border border-primary-color/10 dark:border-primary-color/20">
-                    <Image
-                      src={profileData.profileImage.image}
-                      alt={profileData.profileImage.alt || profileData.fullName}
-                      fill
-                      placeholder="blur"
-                      blurDataURL={profileData.profileImage.lqip}
-                      className="object-cover"
-                    />
-                  </div>
+                  <>
+                    <div className="relative w-full h-full overflow-hidden rounded-3xl border border-primary-color/10 dark:border-primary-color/20">
+                      <Image
+                        src={profileData.profileImage.image}
+                        alt={profileData.profileImage.alt || profileData.fullName}
+                        fill
+                        placeholder="blur"
+                        blurDataURL={profileData.profileImage.lqip}
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    {/* Tooltip - positioned outside overflow-hidden */}
+                    <div className="absolute -top-20 left-1/2 -translate-x-1/2 px-4 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-medium rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-50">
+                      Turning coffee into code since 2021 ☕→💻
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-900 dark:bg-zinc-100 rotate-45" />
+                    </div>
+                  </>
+
                 ) : (
                   <HeroSvg />
                 )}

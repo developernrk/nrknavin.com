@@ -1,14 +1,58 @@
+'use client';
+
 import Link from "next/link";
 import {
-  HiOutlineMail 
+  HiOutlineMail,
 } from "react-icons/hi";
+import { FaLinkedin, FaGithub, FaVoicemail } from "react-icons/fa";
 import UnmountStudio from "./Unmount";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
+import { useState } from "react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
+  // Newsletter state
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  // Handle newsletter subscription
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setMessage(data.message);
+        setEmail(''); // Clear input on success
+      } else {
+        setStatus('error');
+        setMessage(data.error);
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage('Something went wrong. Please try again.');
+    }
+
+    // Clear message after 5 seconds
+    setTimeout(() => {
+      setStatus('idle');
+      setMessage('');
+    }, 5000);
+  };
+
   const footerLinks = [
     { title: "Skills", href: "/skills" },
     { title: "Projects", href: "/projects" },
@@ -17,9 +61,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    // { icon: HiOutlineGithub, href: "https://github.com", label: "GitHub" },
+    { icon: FaGithub, href: "https://github.com/developernrk", label: "GitHub" },
     // { icon: HiOutlineTwitter, href: "https://twitter.com", label: "Twitter" },
-    // { icon: HiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: FaLinkedin, href: "https://linkedin.com/in/navinbarange", label: "LinkedIn" },
     { icon: HiOutlineMail, href: "mailto:navin.work360@gmail.com", label: "Email" },
   ];
 
@@ -28,24 +72,24 @@ export default function Footer() {
       <footer className="relative mt-16 sm:mt-20 md:mt-24 border-t dark:border-zinc-800 border-zinc-200">
         {/* Gradient Background */}
         <div className="absolute inset-0 dark:bg-gradient-to-b dark:from-zinc-900/0 dark:via-zinc-900/50 dark:to-zinc-950 bg-gradient-to-b from-white/0 via-white/50 to-zinc-50 pointer-events-none" />
-        
+
         <div className="relative container-safe section-padding">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-5 sm:gap-8 mb-6 xs:mb-8 sm:mb-10">
             {/* Brand Section */}
             <div className="col-span-1 sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-3">
-                  <Image
-                      src={Logo}
-                      width={32}
-                      height={32}
-                      alt="Navin's logo"
-                      className="w-16 h-8 rounded-md"
-                  />
+                <Image
+                  src={Logo}
+                  width={32}
+                  height={32}
+                  alt="Navin's logo"
+                  className="w-16 h-8 rounded-md"
+                />
               </div>
-                <span className="font-incognito font-bold dark:text-white text-zinc-900 text-base">Navin Barange | NRk</span>
+              <span className="font-incognito font-bold dark:text-white text-zinc-900 text-base">Navin Barange | NRk</span>
 
               <p className="text-xs dark:text-zinc-400 text-zinc-600 leading-relaxed">
-                Full-stack developer × Technical writer × Professional bug hunter 🐛 → feature builder
+                Full-stack developer × Technical writer × Professional bug hunter → feature builder
               </p>
             </div>
 
@@ -95,21 +139,40 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="col-span-1 sm:col-span-2 lg:col-span-1">
               <h3 className="font-incognito font-semibold dark:text-white text-zinc-900 mb-2 text-sm">
-                Get Updates
+                Join the Dev Club
               </h3>
               <p className="text-xs dark:text-zinc-400 text-zinc-600 mb-3">
-                No spam, just code stories & dev wisdom ☕
+                Get tech tales & code secrets. Zero spam, 100% nerd fuel ⚡
               </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-2.5 py-1.5 rounded-lg text-xs dark:bg-zinc-800 bg-zinc-100 dark:border-zinc-700 border border-zinc-300 dark:text-white text-zinc-900 focus:outline-none focus:ring-2 focus:ring-primary-color"
-                />
-                <button className="btn-primary !px-2.5 !py-1.5 text-xs">
-                  →
-                </button>
-              </div>
+              <form onSubmit={handleSubscribe} className="space-y-2">
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.dev"
+                    required
+                    disabled={status === 'loading'}
+                    className="flex-1 px-2.5 py-1.5 rounded-lg text-xs dark:bg-zinc-800 bg-zinc-100 dark:border-zinc-700 border border-zinc-300 dark:text-white text-zinc-900 focus:outline-none focus:ring-2 focus:ring-primary-color disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="btn-primary !px-2.5 !py-1.5 text-xs disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+                  >
+                    {status === 'loading' ? '...' : '→'}
+                  </button>
+                </div>
+
+                {message && (
+                  <p className={`text-xs ${status === 'success'
+                    ? 'text-green-500 dark:text-green-400'
+                    : 'text-red-500 dark:text-red-400'
+                    }`}>
+                    {message}
+                  </p>
+                )}
+              </form>
             </div>
           </div>
 

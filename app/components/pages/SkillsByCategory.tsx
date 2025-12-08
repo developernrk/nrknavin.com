@@ -9,15 +9,15 @@ interface SkillsByCategoryProps {
 }
 
 const categoryConfig = {
-  frontend: {
-    title: "Frontend Development",
-    icon: "🎨",
-    color: "from-blue-500/10 to-cyan-500/10",
-  },
   backend: {
     title: "Backend Development",
     icon: "⚙️",
     color: "from-purple-500/10 to-pink-500/10",
+  },
+  frontend: {
+    title: "Frontend Development",
+    icon: "🎨",
+    color: "from-blue-500/10 to-cyan-500/10",
   },
   mobile: {
     title: "Mobile Development",
@@ -76,8 +76,8 @@ export default function SkillsByCategory({ skills }: SkillsByCategoryProps) {
 
   // Sort categories in a specific order
   const categoryOrder = [
-    "frontend",
     "backend",
+    "frontend",
     "mobile",
     "ai",
     "architecture",
@@ -99,7 +99,7 @@ export default function SkillsByCategory({ skills }: SkillsByCategoryProps) {
             {/* Category Header */}
             <div className="space-y-3 xs:space-y-4 mb-6 xs:mb-8">
               <h3 className="text-heading-md flex items-center gap-2 xs:gap-3">
-                <span className="text-2xl">{config.icon}</span>
+                {/* <span className="text-2xl">{config.icon}</span> */}
                 {config.title}
               </h3>
               <div className="w-12 h-1 bg-gradient-to-r from-primary-color to-secondary-color rounded-full" />

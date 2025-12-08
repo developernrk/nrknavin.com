@@ -57,7 +57,7 @@ export default async function AboutPage() {
                     <Slide delay={0.1}>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                             <div className="md:col-span-2 space-y-4">
-                                <h2 className="text-heading-md">👋 Hello, I&apos;m Navin</h2>
+                                <h2 className="text-heading-md">Hello, I&apos;m Navin</h2>
                                 <div className="prose dark:prose-invert max-w-none">
                                     <p className="text-lg dark:text-zinc-300 text-zinc-700 leading-relaxed">
                                         I&apos;m a <strong>Full Stack Developer</strong> and <strong>AI Engineer</strong> who believes
@@ -88,7 +88,7 @@ export default async function AboutPage() {
                     {/* Professional Journey */}
                     <Slide delay={0.2}>
                         <div className="space-y-4">
-                            <h2 className="text-heading-md">🚀 My Professional Journey</h2>
+                            <h2 className="text-heading-md"> My Professional Journey</h2>
                             <div className="prose dark:prose-invert max-w-none">
                                 <p className="text-base dark:text-zinc-300 text-zinc-700 leading-relaxed">
                                     My coding journey began with curiosity and evolved into a passion for solving
@@ -110,7 +110,7 @@ export default async function AboutPage() {
                     {/* Technical Philosophy */}
                     <Slide delay={0.3}>
                         <div className="space-y-4">
-                            <h2 className="text-heading-md">💭 Technical Philosophy</h2>
+                            <h2 className="text-heading-md">Technical Philosophy</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="p-6 rounded-xl dark:bg-zinc-900/50 bg-zinc-50 border dark:border-zinc-800 border-zinc-200">
                                     <h3 className="text-xl font-semibold mb-3 dark:text-primary-color text-secondary-color">
@@ -216,7 +216,7 @@ export default async function AboutPage() {
                     {/* What I&apos;m Working On */}
                     <Slide delay={0.5}>
                         <div className="space-y-4">
-                            <h2 className="text-heading-md">🔨 Current Focus</h2>
+                            <h2 className="text-heading-md">Current Focus</h2>
                             <div className="prose dark:prose-invert max-w-none">
                                 <p className="text-base dark:text-zinc-300 text-zinc-700 leading-relaxed">
                                     Currently, I&apos;m diving deeper into <strong>AI integration patterns</strong>,
@@ -234,7 +234,7 @@ export default async function AboutPage() {
                     {profileData?.fullBio && (
                         <Slide delay={0.6}>
                             <div className="space-y-4">
-                                <h2 className="text-heading-md">📖 More About Me</h2>
+                                <h2 className="text-heading-md">More About Me</h2>
                                 <div className="prose dark:prose-invert max-w-none">
                                     <PortableText
                                         value={profileData.fullBio}
