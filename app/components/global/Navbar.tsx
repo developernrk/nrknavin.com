@@ -7,10 +7,14 @@ import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
   const data = [
-      {
-          title: "Skills",
-          href: "/skills",
-      },
+    {
+      title: "About",
+      href: "/about",
+    },
+    {
+      title: "Skills",
+      href: "/skills",
+    },
     {
       title: "Projects",
       href: "/projects",
@@ -20,8 +24,12 @@ export default function Navbar() {
       href: "/blog",
     },
     {
-      title: "Gallery",
-      href: "/gallery",
+      title: "Resume",
+      href: "/resume",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
     },
   ];
 
@@ -30,7 +38,7 @@ export default function Navbar() {
       <header className="text-sm py-6 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/">
-            <Image src={Logo} width={55} height={55} alt="logo" />
+            <Image src={Logo} width={55} height={55} alt="logo" priority />
           </Link>
 
           <nav className="md:block hidden">
@@ -49,7 +57,7 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-x-4">
-             <Theme />
+            <Theme />
             <MobileMenu />
           </div>
         </div>

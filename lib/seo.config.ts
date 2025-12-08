@@ -4,7 +4,7 @@ export const seoConfig = {
   siteUrl: "https://nrknavin.in",
   defaultTitle: "Navin Barange | Full Stack Developer & AI Engineer",
   defaultDescription: "Full Stack Developer & AI Engineer specializing in Java, React, Python, and cloud architecture. Building scalable solutions from frontend to AI integration.",
-  
+
   // Author information
   author: {
     name: "Navin Barange",
@@ -13,37 +13,63 @@ export const seoConfig = {
     linkedin: "https://linkedin.com/in/navinbarange",
     github: "https://github.com/developernrk",
   },
-  
+
   // Default images
   defaultOgImage: "https://i.ibb.co/BBPbZb7/1705208737383.jpg",
   defaultTwitterImage: "https://i.ibb.co/BBPbZb7/1705208737383.jpg",
-  
+
   // Keywords
   defaultKeywords: [
+    // Primary keywords
     "Full Stack Developer",
-    "AI Engineer", 
+    "AI Engineer",
     "Java Developer",
     "React Developer",
     "Python Developer",
+
+    // Technology keywords
     "Spring Boot",
     "Cloud Architecture",
     "Microservices",
     "Software Engineer",
     "Web Development",
     "Machine Learning",
-    "Navin Barange"
+    "Next.js Developer",
+    "TypeScript",
+    "REST API",
+
+    // Location-based
+    "Remote Developer",
+    "India Developer",
+    "Remote Full Stack Developer",
+
+    // Long-tail keywords
+    "Full Stack Developer AI Engineer",
+    "Java Spring Boot Developer",
+    "React Python Full Stack",
+    "Cloud Architecture Microservices",
+    "Hire Full Stack Developer",
+    "Software Engineering Best Practices",
+    "Navin Barange",
+    "nrknavin",
+
+    // Developer specializations
+    "Backend Developer",
+    "Frontend Developer",
+    "DevOps Engineer",
+    "Software Architect",
   ],
-  
+
   // Social media
   social: {
     twitter: "nrk_navin",
     linkedin: "navinbarange",
     github: "developernrk",
   },
-  
+
   // Analytics and verification
   googleSiteVerification: "liHDrCXXJIwMQAMnvIthc0FniieeAz5MOkpnV_51uTI",
-  
+
   // Structured data
   organization: {
     "@type": "Person",
@@ -73,12 +99,12 @@ export const generatePageMetadata = ({
   url?: string
   type?: "website" | "article"
 }) => {
-  const pageTitle = title 
+  const pageTitle = title
     ? `${title} | ${seoConfig.siteName}`
     : seoConfig.defaultTitle
-  
+
   const pageDescription = description || seoConfig.defaultDescription
-  const pageKeywords = keywords 
+  const pageKeywords = keywords
     ? [...seoConfig.defaultKeywords, ...keywords]
     : seoConfig.defaultKeywords
   const pageImage = image || seoConfig.defaultOgImage

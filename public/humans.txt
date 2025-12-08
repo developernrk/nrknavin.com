@@ -1,0 +1,54 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Navin Barange - Full Stack Developer & AI Engineer
+    Email: navin.work360@gmail.com
+    Location: India
+    Twitter: @nrk_navin
+    GitHub: @developernrk
+    LinkedIn: linkedin.com/in/navinbarange
+
+# THANKS
+    To all the coffee that made this possible ☕
+    Stack Overflow for being there when Google wasn't enough
+    The open-source community for amazing tools and inspiration
+
+# TECHNOLOGY COLOPHON
+
+    ## Frontend
+    Next.js 14
+    React 18
+    TypeScript
+    Tailwind CSS
+    Framer Motion
+
+    ## Backend & CMS
+    Sanity.io
+    Next.js API Routes
+
+    ## Development
+    VS Code
+    Git & GitHub
+    npm/pnpm
+    ESLint & Prettier
+
+    ## Hosting & Deployment
+    Vercel
+    Custom Domain with SSL
+    Global CDN
+
+    ## Analytics & SEO
+    Google Search Console
+    Open Graph Protocol
+    Schema.org Structured Data
+    Meta Tags Optimization
+
+# SITE
+    Last update: 2024/12/08
+    Standards: HTML5, CSS3, ES6+
+    Components: React Server Components
+    IDE: Visual Studio Code
+    Language: English
+    Doctype: HTML5
+    Accessibility: WCAG 2.1 AA Compliant

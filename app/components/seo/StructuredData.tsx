@@ -1,7 +1,7 @@
 import Script from 'next/script'
 
 interface StructuredDataProps {
-  type?: 'person' | 'website' | 'article' | 'project'
+  type?: 'person' | 'website' | 'article' | 'project' | 'faq' | 'job'
   data?: any
 }
 
@@ -104,6 +104,69 @@ export default function StructuredData({ type = 'person', data }: StructuredData
           },
           dateCreated: data?._createdAt,
           programmingLanguage: data?.technologies || [],
+        }
+
+      case 'faq':
+        return {
+          ...baseData,
+          '@type': 'FAQPage',
+          mainEntity: data?.faqs || [
+            {
+              '@type': 'Question',
+              name: 'What technologies do you specialize in?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'I specialize in full-stack development with Java, Spring Boot, React, Next.js, Python, and cloud technologies including AWS and microservices architecture.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Are you available for freelance work?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes, I am available for freelance projects, consulting work, and full-time opportunities. Feel free to reach out through my contact page.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'What kind of projects do you work on?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'I work on a variety of projects including web applications, microservices architecture, AI/ML integration, cloud-native solutions, and enterprise software development.',
+              },
+            },
+          ],
+        }
+
+      case 'job':
+        return {
+          ...baseData,
+          '@type': 'JobPosting',
+          title: data?.jobTitle || 'Full Stack Developer',
+          description: data?.description || 'Full Stack Developer with expertise in Java, React, and AI integration',
+          datePosted: data?.startDate || new Date().toISOString(),
+          employmentType: data?.employmentType || 'FULL_TIME',
+          hiringOrganization: {
+            '@type': 'Organization',
+            name: data?.name || 'Company',
+            url: data?.url || '',
+          },
+          jobLocation: {
+            '@type': 'Place',
+            address: {
+              '@type': 'PostalAddress',
+              addressCountry: 'IN',
+            },
+          },
+          skills: [
+            'Java',
+            'Spring Boot',
+            'React',
+            'Python',
+            'Microservices',
+            'Cloud Architecture',
+            'AI/ML',
+          ],
         }
 
       default:

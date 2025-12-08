@@ -58,7 +58,7 @@ export default async function Hero() {
           {/* Short Bio */}
           <Slide delay={0.1}>
             <p className="text-base sm:text-lg dark:text-zinc-400 text-zinc-600 leading-relaxed max-w-xl">
-                Crafting scalable solutions from React frontends to Java backends, with AI integration and cloud architecture. I transform complex challenges into elegant, production-ready applications.
+              I am Navin call me NRk, a Full Stack Developer & AI Engineer Crafting scalable solutions from React frontends to Java backends, with AI integration and cloud architecture. I transform complex challenges into elegant, production-ready applications.
             </p>
           </Slide>
 

@@ -42,7 +42,7 @@ export default async function Project() {
     <main className="min-h-screen flex flex-col">
       <PageHeading
         title="Projects"
-        description="Here are the projects that didn't destroy my confidence (or my laptop 💻). Most are open-source because apparently I like sharing my mistakes with the world 😄"
+        description="Here are the projects that didn't destroy my confidence (or my laptop). Most are open-source because apparently I like sharing my mistakes with the world 😄"
       />
 
       <section className="container-safe section-padding flex-1">
@@ -55,7 +55,7 @@ export default async function Project() {
                   The cream of my creative chaos—tested on my machine, your mileage may vary 🚀
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-6 md:gap-8">
                 {projects.map((project) => (
                   <Link
@@ -83,7 +83,7 @@ export default async function Project() {
                         </h3>
                       </div>
                     </div>
-                    
+
                     <p className="text-sm sm:text-base dark:text-zinc-400 text-zinc-600 leading-relaxed flex-1 line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
                       {project.tagline}
                     </p>
