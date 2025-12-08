@@ -146,6 +146,18 @@ export default async function AboutPage() {
                                 </div>
 
                                 <div className="p-6 rounded-xl dark:bg-zinc-900/50 bg-zinc-50 border dark:border-zinc-800 border-zinc-200">
+
+                                    <h3 className="text-xl font-semibold mb-3 dark:text-primary-color text-secondary-color">
+                                        Good Coders Write Bad Code First
+                                    </h3>
+                                    <p className="text-sm dark:text-zinc-400 text-zinc-600">
+                                        Mastery comes from iteration, not perfection. To become a good developer, you need to
+                                        write a lot of bad code—experiment, fail, refactor, and learn from mistakes. Every
+                                        bug fixed and every messy solution improved is a step toward expertise.
+                                    </p>
+                                </div>
+
+                                <div className="p-6 rounded-xl dark:bg-zinc-900/50 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 md:col-span-2">
                                     <h3 className="text-xl font-semibold mb-3 dark:text-primary-color text-secondary-color">
                                         Continuous Learning
                                     </h3>
